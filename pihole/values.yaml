@@ -24,7 +24,7 @@ controller:
 env:
   # -- Set the container timezone
   TZ: Asia/Shanghai
-  WEBPASSWORD: Chu6721457X
+  WEBPASSWORD: changeme
   # -- Configures service settings for the chart.
   # @default -- See values.yaml
 service:
