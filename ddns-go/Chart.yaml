@@ -1,0 +1,23 @@
+apiVersion: v2
+appVersion: latest
+description: ddns-go
+name: ddns-go
+version: 1.0.0
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - ddns-go
+home: https://github.com/Sagit-chu/charts
+icon: https://truecharts.org/_static/img/appicons/ddns-go.png
+sources:
+  - https://github.com/jeessy2/ddns-go
+maintainers:
+  - name: sagit
+    email: sagit@truecharts.org
+dependencies:
+  - name: common
+    repository: https://github.com/Sagit-chu/charts
+    version: 4.3.0
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: Upgraded `common` chart dependency to version `4.3.0`.

@@ -1,0 +1,23 @@
+apiVersion: v2
+appVersion: latest
+description: pihole
+name: pihole
+version: 1.0.0
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - pihole
+home: https://github.com/Sagit-chu/charts
+icon: https://truecharts.org/_static/img/appicons/pihole.png
+sources:
+  - https://github.com/pi-hole
+maintainers:
+  - name: sagit
+    email: sagit@truecharts.org
+dependencies:
+  - name: common
+    repository: https://library-charts.k8s-at-home.com
+    version: 4.3.0
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: Upgraded `common` chart dependency to version `4.3.0`.

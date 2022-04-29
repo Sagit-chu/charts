@@ -1,0 +1,47 @@
+  ##
+  # IMPORTANT NOTE
+  #
+  # This chart inherits from our common library chart. You can check the default values/options here:
+  # https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+  #
+
+image:
+  # -- image repository
+  repository: 601096721/mosdns
+  # -- image tag
+  tag: latest
+  # -- image pull policy
+  pullPolicy: Always
+
+controller:
+  # -- Number of pods to load balance between
+  replicas: 1
+  strategy: RollingUpdate
+
+
+  # -- environment variables. See more environment variables in the [Aria2c documentation](https://github.com/P3TERX/Aria2-Pro-Docker).
+  # @default -- See below
+
+service:
+  main:
+    primary: true
+    type: LoadBalancer
+    ports:
+      http:
+        port: 5353
+        protocol: UDP
+        targetPort: 53
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See values.yaml
+  main:
+    enabled: false
+
+  # -- Configure persistence settings for the chart under this key.
+  # @default -- See values.yaml
+persistence:
+  config:
+    enabled: true
+    mountPath: /etc/mosdns
+    type: emptyDir
